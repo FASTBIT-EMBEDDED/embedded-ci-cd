@@ -1,0 +1,16 @@
+Checks: >
+  -*,
+  bugprone-*,
+  clang-analyzer-*,
+  readability-*,
+  performance-*,
+  portability-*,
+  misc-*,
+  -readability-magic-numbers,
+  -readability-identifier-length,
+  -clang-analyzer-core.FixedAddressDereference,
+  -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
+
+WarningsAsErrors: ""
+HeaderFilterRegex: ".*Core/drivers/.*"
+FormatStyle: none

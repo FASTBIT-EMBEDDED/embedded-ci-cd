@@ -11,6 +11,6 @@
 #include "error.h"
 
 err_t app_init(void);
-void  app_run(void);
+void app_run(void);
 
 #endif /* APP_H */

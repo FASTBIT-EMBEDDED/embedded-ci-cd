@@ -5,33 +5,31 @@
  *      Author: Shreyas Acharya, Fastbit Embedded
  */
 
-
 #include "player.h"
 #include <math.h>
 
-#define PLAYER_ACCEL_GAIN      150.0f
-#define PLAYER_FRICTION        0.99f
-#define PLAYER_BOUNCE_FACTOR   0.85f
-#define PLAYER_MAX_SPEED       230.0f
+#define PLAYER_ACCEL_GAIN 150.0f
+#define PLAYER_FRICTION 0.99f
+#define PLAYER_BOUNCE_FACTOR 0.85f
+#define PLAYER_MAX_SPEED 230.0f
 
 static float clampf(float value, float min_val, float max_val)
 {
-    if (value < min_val) {
+    if (value < min_val)
+    {
         return min_val;
     }
-    if (value > max_val) {
+    if (value > max_val)
+    {
         return max_val;
     }
     return value;
 }
 
-err_t player_init(player_t *player,
-                  float     x,
-                  float     y,
-                  uint16_t  radius,
-                  uint16_t  colour)
+err_t player_init(player_t *player, float x, float y, uint16_t radius, uint16_t colour)
 {
-    if (player == 0) {
+    if (player == 0)
+    {
         return ERR_INVALID_PARAM;
     }
 
@@ -45,12 +43,10 @@ err_t player_init(player_t *player,
     return ERR_OK;
 }
 
-err_t player_update(player_t *player,
-                    float     tilt_x,
-                    float     tilt_y,
-                    float     dt_s)
+err_t player_update(player_t *player, float tilt_x, float tilt_y, float dt_s)
 {
-    if (player == 0) {
+    if (player == 0)
+    {
         return ERR_INVALID_PARAM;
     }
 
@@ -69,10 +65,7 @@ err_t player_update(player_t *player,
     return ERR_OK;
 }
 
-err_t player_bounce_in_round_world(player_t *player,
-                                   float     cx,
-                                   float     cy,
-                                   float     world_radius)
+err_t player_bounce_in_round_world(player_t *player, float cx, float cy, float world_radius)
 {
     float dx;
     float dy;
@@ -82,7 +75,8 @@ err_t player_bounce_in_round_world(player_t *player,
     float ny;
     float dot;
 
-    if (player == 0) {
+    if (player == 0)
+    {
         return ERR_INVALID_PARAM;
     }
 
@@ -91,7 +85,8 @@ err_t player_bounce_in_round_world(player_t *player,
     distance = sqrtf((dx * dx) + (dy * dy));
     limit = world_radius - (float)player->radius;
 
-    if (distance > limit && distance > 0.0f) {
+    if (distance > limit && distance > 0.0f)
+    {
         nx = dx / distance;
         ny = dy / distance;
 
@@ -100,7 +95,8 @@ err_t player_bounce_in_round_world(player_t *player,
 
         dot = (player->vx * nx) + (player->vy * ny);
 
-        if (dot > 0.0f) {
+        if (dot > 0.0f)
+        {
             player->vx = player->vx - (2.0f * dot * nx);
             player->vy = player->vy - (2.0f * dot * ny);
 

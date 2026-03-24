@@ -9,8 +9,8 @@
 #define DRIVERS_GAME_BYTE_ARRAY_H_
 
 #include <stdint.h>
-#define BALL_IMG_W   40U
-#define BALL_IMG_H   40U
+#define BALL_IMG_W 40U
+#define BALL_IMG_H 40U
 
 extern const uint16_t ball_1[3200];
 extern const uint16_t ball_2[3200];

@@ -16,19 +16,18 @@
 /*                            Private configuration                           */
 /* -------------------------------------------------------------------------- */
 
-#define MPU6050_REG_PWR_MGMT_1        0x6BU
-#define MPU6050_REG_SMPLRT_DIV        0x19U
-#define MPU6050_REG_CONFIG            0x1AU
-#define MPU6050_REG_GYRO_CONFIG       0x1BU
-#define MPU6050_REG_ACCEL_CONFIG      0x1CU
-#define MPU6050_REG_ACCEL_XOUT_H      0x3BU
-#define MPU6050_REG_GYRO_XOUT_H       0x43U
+#define MPU6050_REG_PWR_MGMT_1 0x6BU
+#define MPU6050_REG_SMPLRT_DIV 0x19U
+#define MPU6050_REG_CONFIG 0x1AU
+#define MPU6050_REG_GYRO_CONFIG 0x1BU
+#define MPU6050_REG_ACCEL_CONFIG 0x1CU
+#define MPU6050_REG_ACCEL_XOUT_H 0x3BU
+#define MPU6050_REG_GYRO_XOUT_H 0x43U
 
-#define MPU6050_ACCEL_FS_2G_CFG       0x00U
-#define MPU6050_GYRO_FS_500DPS_CFG    0x08U
+#define MPU6050_ACCEL_FS_2G_CFG 0x00U
+#define MPU6050_GYRO_FS_500DPS_CFG 0x08U
 
-#define MPU6050_ACCEL_SENS_2G         16384.0f
-
+#define MPU6050_ACCEL_SENS_2G 16384.0f
 
 /* -------------------------------------------------------------------------- */
 /*                              Private data type                             */
@@ -65,7 +64,8 @@ mpu6050_handle_t mpu6050_create(uint8_t i2c_addr)
     mpu6050_handle_t hdl;
 
     hdl = (mpu6050_handle_t)malloc(sizeof(struct mpu6050_device_t));
-    if (hdl == NULL) {
+    if (hdl == NULL)
+    {
         return NULL;
     }
 
@@ -77,7 +77,8 @@ mpu6050_handle_t mpu6050_create(uint8_t i2c_addr)
 
 void mpu6050_destroy(mpu6050_handle_t hdl)
 {
-    if (hdl == NULL) {
+    if (hdl == NULL)
+    {
         return;
     }
 
@@ -88,36 +89,42 @@ err_t mpu6050_init(mpu6050_handle_t hdl)
 {
     err_t status;
 
-    if (hdl == NULL) {
+    if (hdl == NULL)
+    {
         return ERR_INVALID_PARAM;
     }
 
     HAL_Delay(200);
 
     status = mpu6050_write_reg(hdl, MPU6050_REG_PWR_MGMT_1, 0x00U);
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
     HAL_Delay(10);
 
     status = mpu6050_write_reg(hdl, MPU6050_REG_SMPLRT_DIV, 0x07U);
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
     status = mpu6050_write_reg(hdl, MPU6050_REG_CONFIG, 0x00U);
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
     status = mpu6050_write_reg(hdl, MPU6050_REG_GYRO_CONFIG, MPU6050_GYRO_FS_500DPS_CFG);
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
     status = mpu6050_write_reg(hdl, MPU6050_REG_ACCEL_CONFIG, MPU6050_ACCEL_FS_2G_CFG);
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
@@ -132,7 +139,8 @@ err_t mpu6050_calibrate(mpu6050_handle_t hdl)
     int32_t sum_z = 0;
     const uint16_t samples_count = 200U;
 
-    if (hdl == NULL) {
+    if (hdl == NULL)
+    {
         return ERR_INVALID_PARAM;
     }
 
@@ -141,8 +149,10 @@ err_t mpu6050_calibrate(mpu6050_handle_t hdl)
     hdl->accel_z_offset = 0;
     hdl->is_calibrated = 0U;
 
-    for (uint16_t i = 0; i < samples_count; i++) {
-        if (mpu6050_read_accel(hdl, &sample) != ERR_OK) {
+    for (uint16_t i = 0; i < samples_count; i++)
+    {
+        if (mpu6050_read_accel(hdl, &sample) != ERR_OK)
+        {
             return ERR_HW_FAILURE;
         }
 
@@ -160,7 +170,8 @@ err_t mpu6050_calibrate(mpu6050_handle_t hdl)
      * At rest, Z axis sees gravity.
      * For ±2g mode, 1g ~= 16384 LSB.
      */
-    hdl->accel_z_offset = (int16_t)((sum_z / (int32_t)samples_count) - (int32_t)MPU6050_ACCEL_SENS_2G);
+    hdl->accel_z_offset =
+        (int16_t)((sum_z / (int32_t)samples_count) - (int32_t)MPU6050_ACCEL_SENS_2G);
 
     hdl->is_calibrated = 1U;
 
@@ -175,12 +186,14 @@ err_t mpu6050_read_accel(mpu6050_handle_t hdl, mpu6050_sample_t *sample)
     int16_t raw_z;
     err_t status;
 
-    if ((hdl == NULL) || (sample == NULL)) {
+    if ((hdl == NULL) || (sample == NULL))
+    {
         return ERR_INVALID_PARAM;
     }
 
     status = mpu6050_read_regs(hdl, MPU6050_REG_ACCEL_XOUT_H, raw_data, sizeof(raw_data));
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
@@ -188,7 +201,8 @@ err_t mpu6050_read_accel(mpu6050_handle_t hdl, mpu6050_sample_t *sample)
     raw_y = (int16_t)((raw_data[2] << 8) | raw_data[3]);
     raw_z = (int16_t)((raw_data[4] << 8) | raw_data[5]);
 
-    if (hdl->is_calibrated != 0U) {
+    if (hdl->is_calibrated != 0U)
+    {
         raw_x -= hdl->accel_x_offset;
         raw_y -= hdl->accel_y_offset;
         raw_z -= hdl->accel_z_offset;
@@ -201,7 +215,6 @@ err_t mpu6050_read_accel(mpu6050_handle_t hdl, mpu6050_sample_t *sample)
     return ERR_OK;
 }
 
-
 err_t mpu6050_read_gyro(mpu6050_handle_t hdl, mpu6050_gyro_sample_t *sample)
 {
     uint8_t raw_data[6];
@@ -210,12 +223,14 @@ err_t mpu6050_read_gyro(mpu6050_handle_t hdl, mpu6050_gyro_sample_t *sample)
     int16_t raw_z;
     err_t status;
 
-    if ((hdl == NULL) || (sample == NULL)) {
+    if ((hdl == NULL) || (sample == NULL))
+    {
         return ERR_INVALID_PARAM;
     }
 
     status = mpu6050_read_regs(hdl, MPU6050_REG_GYRO_XOUT_H, raw_data, sizeof(raw_data));
-    if (status != ERR_OK) {
+    if (status != ERR_OK)
+    {
         return status;
     }
 
@@ -238,19 +253,16 @@ static err_t mpu6050_write_reg(mpu6050_handle_t hdl, uint8_t reg, uint8_t value)
 {
     HAL_StatusTypeDef hal_status;
 
-    if (hdl == NULL) {
+    if (hdl == NULL)
+    {
         return ERR_INVALID_PARAM;
     }
 
-    hal_status = HAL_I2C_Mem_Write(&hi2c1,
-                                   (uint16_t)(hdl->i2c_addr << 1),
-                                   reg,
-                                   I2C_MEMADD_SIZE_8BIT,
-                                   &value,
-                                   1,
-                                   HAL_MAX_DELAY);
+    hal_status = HAL_I2C_Mem_Write(&hi2c1, (uint16_t)(hdl->i2c_addr << 1), reg,
+                                   I2C_MEMADD_SIZE_8BIT, &value, 1, HAL_MAX_DELAY);
 
-    if (hal_status != HAL_OK) {
+    if (hal_status != HAL_OK)
+    {
         return ERR_HW_FAILURE;
     }
 
@@ -261,19 +273,16 @@ static err_t mpu6050_read_regs(mpu6050_handle_t hdl, uint8_t reg, uint8_t *data,
 {
     HAL_StatusTypeDef hal_status;
 
-    if ((hdl == NULL) || (data == NULL) || (len == 0U)) {
+    if ((hdl == NULL) || (data == NULL) || (len == 0U))
+    {
         return ERR_INVALID_PARAM;
     }
 
-    hal_status = HAL_I2C_Mem_Read(&hi2c1,
-                                  (uint16_t)(hdl->i2c_addr << 1),
-                                  reg,
-                                  I2C_MEMADD_SIZE_8BIT,
-                                  data,
-                                  len,
-                                  HAL_MAX_DELAY);
+    hal_status = HAL_I2C_Mem_Read(&hi2c1, (uint16_t)(hdl->i2c_addr << 1), reg, I2C_MEMADD_SIZE_8BIT,
+                                  data, len, HAL_MAX_DELAY);
 
-    if (hal_status != HAL_OK) {
+    if (hal_status != HAL_OK)
+    {
         return ERR_HW_FAILURE;
     }
 

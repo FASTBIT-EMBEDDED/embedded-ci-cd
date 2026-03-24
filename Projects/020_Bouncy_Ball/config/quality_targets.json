@@ -1,0 +1,24 @@
+{
+    "include_dirs": [
+        "Core/drivers"
+    ],
+    "exclude_dirs": [
+        "Core/Inc",
+        "Core/Src",
+        "Drivers",
+        "build",
+        ".git",
+        ".github",
+        ".vscode",
+        "reports"
+    ],
+    "exclude_files": [],
+    "source_extensions": [
+        ".c",
+        ".h",
+        ".cpp",
+        ".hpp"
+    ],
+    "build_dir": "build/Debug",
+    "project_name": "020_Bouncy_Ball"
+}

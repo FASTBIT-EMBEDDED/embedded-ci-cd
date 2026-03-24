@@ -8,6 +8,4 @@
 #ifndef DRIVERS_GFX_GFX_H_
 #define DRIVERS_GFX_GFX_H_
 
-
-
 #endif /* DRIVERS_GFX_GFX_H_ */

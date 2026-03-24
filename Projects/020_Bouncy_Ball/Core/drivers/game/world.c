@@ -7,12 +7,10 @@
 
 #include "world.h"
 
-void world_init(world_t *world,
-                uint16_t width,
-                uint16_t height,
-                uint16_t background_colour)
+void world_init(world_t *world, uint16_t width, uint16_t height, uint16_t background_colour)
 {
-    if (world == 0) {
+    if (world == 0)
+    {
         return;
     }
 

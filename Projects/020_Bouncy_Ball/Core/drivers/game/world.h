@@ -10,18 +10,16 @@
 
 #include <stdint.h>
 
-typedef struct {
+typedef struct
+{
     uint16_t width;
     uint16_t height;
-    float    center_x;
-    float    center_y;
-    float    radius;
+    float center_x;
+    float center_y;
+    float radius;
     uint16_t background_colour;
 } world_t;
 
-void world_init(world_t *world,
-                uint16_t width,
-                uint16_t height,
-                uint16_t background_colour);
+void world_init(world_t *world, uint16_t width, uint16_t height, uint16_t background_colour);
 
 #endif /* WORLD_H */

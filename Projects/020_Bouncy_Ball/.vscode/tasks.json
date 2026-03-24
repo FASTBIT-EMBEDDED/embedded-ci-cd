@@ -1,0 +1,63 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format Apply",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/format_apply.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Format Check",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/format_check.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/run_build.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Cppcheck",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/run_cppcheck.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Clang-tidy",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/run_clang_tidy.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Quality Gate",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "tools/quality/run_quality_gate.py"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
