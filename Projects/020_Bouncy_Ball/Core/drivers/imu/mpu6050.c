@@ -3,7 +3,6 @@
  *
  *  Created on: Apr 12, 2024
  *      Author: Shreyas Acharya, BHARATI SOFTWARE
- *      Updated to match handle-based mpu6050.h API
  */
 
 #include "mpu6050.h"
