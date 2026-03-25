@@ -31,6 +31,9 @@ on:
 jobs:
   docker-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     outputs:
       image: ${{ steps.image.outputs.name }}
     steps:
@@ -65,6 +68,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: docker-image
+    permissions:
+      contents: read
+      packages: read # ← needed to pull the image
     env:
       IMAGE: ${{ needs.docker-image.outputs.image }}:latest
       PROJECT: ${{ github.event.inputs.project || '020_Bouncy_Ball' }}
