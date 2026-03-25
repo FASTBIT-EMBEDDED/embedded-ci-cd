@@ -9,6 +9,16 @@ else
 endif
 
 # ============================================================
+# Tool selection
+# ============================================================
+
+ifeq ($(HOST_OS),windows)
+    CMAKE_CMD := cube-cmake
+else
+    CMAKE_CMD := cmake
+endif
+
+# ============================================================
 # User controls
 # ============================================================
 
@@ -58,6 +68,10 @@ else ifeq ($(build),release)
 CMAKE_BUILD_TYPE := Release
 endif
 
+# ============================================================
+# Main targets
+# ============================================================
+
 .PHONY: all analyze cppcheck clangtidy tests gtest qutest \
         build_bin configure_target build_target \
         format format_check clean summary reconfigure
@@ -66,6 +80,7 @@ all: analyze tests build_bin
 
 # ------------------------------------------------------------
 # Static analysis
+# Only test=none skips analysis
 # ------------------------------------------------------------
 analyze:
 ifeq ($(test),none)
@@ -129,22 +144,22 @@ endif
 
 configure_target:
 ifeq ($(HOST_OS),windows)
-	@powershell -NoProfile -ExecutionPolicy Bypass -Command "if (-not (Test-Path '$(BUILD_DIR)/build.ninja')) { Write-Host '[driver] Configuring STM32 target build type=$(CMAKE_BUILD_TYPE)'; cube-cmake -DCMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE) -DCMAKE_TOOLCHAIN_FILE='$(TOOLCHAIN)' -DCMAKE_COMMAND=cube-cmake -S '$(CUR_DIR)' -B '$(BUILD_DIR)' -G Ninja; if ($$LASTEXITCODE -ne 0) { exit $$LASTEXITCODE } }"
+	@powershell -NoProfile -ExecutionPolicy Bypass -Command "if (-not (Test-Path '$(BUILD_DIR)/build.ninja')) { Write-Host '[driver] Configuring STM32 target build type=$(CMAKE_BUILD_TYPE)'; $(CMAKE_CMD) -DCMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE) -DCMAKE_TOOLCHAIN_FILE='$(TOOLCHAIN)' -DCMAKE_COMMAND=$(CMAKE_CMD) -S '$(CUR_DIR)' -B '$(BUILD_DIR)' -G Ninja; if ($$LASTEXITCODE -ne 0) { exit $$LASTEXITCODE } }"
 else
 	@if [ ! -f "$(BUILD_DIR)/build.ninja" ]; then \
 		echo "[driver] Configuring STM32 target build type=$(CMAKE_BUILD_TYPE)"; \
-		cube-cmake -DCMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE) \
-		           -DCMAKE_TOOLCHAIN_FILE="$(TOOLCHAIN)" \
-		           -DCMAKE_COMMAND=cube-cmake \
-		           -S "$(CUR_DIR)" \
-		           -B "$(BUILD_DIR)" \
-		           -G Ninja; \
+		$(CMAKE_CMD) -DCMAKE_BUILD_TYPE=$(CMAKE_BUILD_TYPE) \
+		             -DCMAKE_TOOLCHAIN_FILE="$(TOOLCHAIN)" \
+		             -DCMAKE_COMMAND=$(CMAKE_CMD) \
+		             -S "$(CUR_DIR)" \
+		             -B "$(BUILD_DIR)" \
+		             -G Ninja; \
 	fi
 endif
 
 build_target: configure_target
 	@echo "[driver] Building STM32 target type=$(CMAKE_BUILD_TYPE)"
-	@cube-cmake --build "$(BUILD_DIR)" --
+	@$(CMAKE_CMD) --build "$(BUILD_DIR)" --
 
 reconfigure:
 ifeq ($(HOST_OS),windows)
@@ -174,6 +189,7 @@ summary:
 	@echo "Target           : $(target)"
 	@echo "Test             : $(test)"
 	@echo "Host OS          : $(HOST_OS)"
+	@echo "CMake cmd        : $(CMAKE_CMD)"
 	@echo "Build dir        : $(BUILD_DIR)"
 	@echo "====================================="
 
