@@ -65,3 +65,6 @@ jobs:
             -w "/workspace/Projects/${PROJECT}" \
             embedded-ci:latest \
             bash -lc "make target=target test=${TEST} build=${BUILD}"
+
+
+
