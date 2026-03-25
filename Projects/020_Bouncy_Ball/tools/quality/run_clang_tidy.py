@@ -1,80 +1,48 @@
-import sys
+import argparse, subprocess, sys
+from pathlib import Path
 
-from common import (
-    ROOT,
-    get_source_files,
-    load_config,
-    normalize_rel_path,
-    print_header,
-    print_status,
-    run_command,
-    write_report,
-)
+ROOT = Path(__file__).resolve().parents[1]
 
+def get_sources(cfg_path: Path):
+    import json
+    cfg = json.loads(cfg_path.read_text())
+    inc  = [ROOT / p for p in cfg.get("include_dirs", [])]
+    exc  = {p for p in cfg.get("exclude_dirs", [])}
+    srcs = []
+    for d in inc:
+        for f in d.rglob("*.c"):
+            rel = str(f.relative_to(ROOT)).replace("\\", "/")
+            if not any(rel.startswith(e) for e in exc):
+                srcs.append(f)
+    return srcs
 
-def main() -> int:
-    cfg = load_config()
-    build_dir = ROOT / cfg.get("build_dir", "build/Debug")
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--build-dir", required=True)
+    args = p.parse_args()
 
-    files = [p for p in get_source_files() if p.suffix in {".c", ".cpp"}]
+    cfg_path = ROOT / "project.cfg"
+    sources  = get_sources(cfg_path)
+    build_db = Path(args.build_dir) / "compile_commands.json"
 
-    if not files:
-        print_status("Clang-tidy", "WARN", "No source files found")
-        return 0
+    if not build_db.exists():
+        print(f"[FAIL] compile_commands.json not found in {args.build_dir}")
+        sys.exit(1)
 
-    print_header("CLANG-TIDY")
+    failed = []
+    for src in sources:
+        r = subprocess.run(
+            ["clang-tidy", f"-p={args.build_dir}", str(src)],
+            capture_output=True, text=True
+        )
+        if r.returncode != 0:
+            print(r.stdout + r.stderr)
+            failed.append(src.name)
 
-    total = len(files)
-    clean = 0
-    warned = 0
-    failed = 0
-    all_logs = []
-
-    for path in files:
-        rel = normalize_rel_path(path)
-        cmd = [
-            "clang-tidy",
-            str(path),
-            "-p",
-            str(build_dir),
-            "--quiet",
-        ]
-        code, output = run_command(cmd)
-
-        if code == 0 and not output.strip():
-            print_status(rel, "PASS")
-            clean += 1
-        elif code == 0 and output.strip():
-            print_status(rel, "WARN")
-            print(output)
-            warned += 1
-            all_logs.append(f"\n=== {rel} ===\n{output}")
-        else:
-            print_status(rel, "FAIL")
-            if output.strip():
-                print(output)
-                all_logs.append(f"\n=== {rel} ===\n{output}")
-            failed += 1
-
-    summary = []
-    summary.append(f"Total files : {total}")
-    summary.append(f"Clean       : {clean}")
-    summary.append(f"Warnings    : {warned}")
-    summary.append(f"Failed      : {failed}")
-
-    write_report("clang_tidy.log", "\n".join(summary) + "\n" + "\n".join(all_logs))
-
-    if failed > 0:
-        print_status("Clang-tidy summary", "FAIL", f"{failed} file(s) failed")
-        return 1
-
-    if warned > 0:
-        print_status("Clang-tidy summary", "WARN", f"{warned} file(s) with warnings")
-        return 0
-
-    print_status("Clang-tidy summary", "PASS", f"All {total} files clean")
-    return 0
-
+    if failed:
+        print(f"[FAIL] clang-tidy: {len(failed)} file(s) failed")
+        sys.exit(1)
+    print(f"[PASS] clang-tidy: {len(sources)} file(s) clean")
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
