@@ -29,42 +29,98 @@ on:
         default: "none"
 
 jobs:
-  build:
+  # ── Job 1: build the Docker image only when container/ changes ──────────────
+  docker-image:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
-
-    env:
-      PROJECT: ${{ github.event.inputs.project || '020_Bouncy_Ball' }}
-      BUILD: ${{ github.event.inputs.build || 'debug' }}
-      TEST: ${{ github.event.inputs.test || 'none' }}
-
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}/embedded-ci
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build CI image with cache
+      - name: Build and push (cached)
         uses: docker/build-push-action@v6
         with:
           context: .
           file: container/Dockerfile
-          tags: embedded-ci:latest
-          load: true
-          cache-from: type=gha,scope=embedded-ci
-          cache-to: type=gha,mode=max,scope=embedded-ci
+          # Push to registry so the build job just does a fast `docker pull`
+          push: true
+          tags: ghcr.io/${{ github.repository }}/embedded-ci:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/embedded-ci:buildcache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository }}/embedded-ci:buildcache,mode=max
 
-      - name: Run project build
+  # ── Job 2: build & test (depends on image job) ──────────────────────────────
+  build:
+    runs-on: ubuntu-latest
+    needs: docker-image
+
+    env:
+      PROJECT: ${{ github.event.inputs.project || '020_Bouncy_Ball' }}
+      BUILD: ${{ github.event.inputs.build   || 'debug' }}
+      TEST: ${{ github.event.inputs.test    || 'none' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Pull the pre-built image — much faster than rebuilding it
+      - name: Pull CI image
+        run: docker pull ghcr.io/${{ github.repository }}/embedded-ci:latest
+
+      # Cache compiled object files between runs using ccache
+      - name: Restore ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.ccache
+          # Key changes only when the source files change
+          key: ccache-${{ env.PROJECT }}-${{ env.BUILD }}-${{ hashFiles('Projects/**/*.c', 'Projects/**/*.cpp', 'Projects/**/*.h') }}
+          restore-keys: |
+            ccache-${{ env.PROJECT }}-${{ env.BUILD }}-
+            ccache-${{ env.PROJECT }}-
+
+      - name: Build project
+        run: |
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/workspace" \
+            -v "${HOME}/.ccache:/root/.ccache" \
+            -e CCACHE_DIR=/root/.ccache \
+            -w "/workspace/Projects/${PROJECT}" \
+            ghcr.io/${{ github.repository }}/embedded-ci:latest \
+            bash -lc "ccache make target=target build=${BUILD}"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PROJECT }}-${{ env.BUILD }}
+          path: Projects/${{ env.PROJECT }}/build/
+          retention-days: 7
+
+      - name: Run tests
+        if: env.TEST != 'none'
         run: |
           docker run --rm \
             -v "${GITHUB_WORKSPACE}:/workspace" \
             -w "/workspace/Projects/${PROJECT}" \
-            embedded-ci:latest \
+            ghcr.io/${{ github.repository }}/embedded-ci:latest \
             bash -lc "make target=target test=${TEST} build=${BUILD}"
-
-
-
