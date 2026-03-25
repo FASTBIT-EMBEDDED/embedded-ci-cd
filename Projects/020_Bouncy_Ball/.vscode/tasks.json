@@ -48,7 +48,6 @@
         },
         {
             "label": "Quality Gate",
-            "type": "shell",
             "command": "python",
             "args": [
                 "tools/quality/run_quality_gate.py"

@@ -1,14 +1,7 @@
 import sys
 
-from common import (
-    ROOT,
-    get_source_files,
-    load_config,
-    print_header,
-    print_status,
-    run_command,
-    write_report,
-)
+from common import ROOT, load_config, print_header, print_status, run_command, write_report
+
 
 def main() -> int:
     cfg = load_config()

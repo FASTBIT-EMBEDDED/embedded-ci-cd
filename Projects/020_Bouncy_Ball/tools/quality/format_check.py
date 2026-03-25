@@ -2,6 +2,7 @@ import sys
 
 from common import get_source_files, print_header, print_status, run_command, write_report
 
+
 def main() -> int:
     files = get_source_files()
     if not files:

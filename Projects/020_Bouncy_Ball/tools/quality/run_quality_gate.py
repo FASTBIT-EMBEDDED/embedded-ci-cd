@@ -13,6 +13,7 @@ STEPS = [
     ("Clang-tidy", TOOLS_DIR / "run_clang_tidy.py"),
 ]
 
+
 def main() -> int:
     print_header("QUALITY GATE")
 

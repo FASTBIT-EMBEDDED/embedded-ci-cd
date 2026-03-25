@@ -1,5 +1,4 @@
 import sys
-from pathlib import Path
 
 from common import (
     ROOT,
@@ -11,6 +10,7 @@ from common import (
     run_command,
     write_report,
 )
+
 
 def main() -> int:
     cfg = load_config()

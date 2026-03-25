@@ -1,0 +1,1500 @@
+Total files : 8
+Clean       : 1
+Warnings    : 7
+Failed      : 0
+
+=== Core/drivers/display/gc9a01a.c ===
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:73:9: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+   73 |         GC9A01A_CS_LOW();
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:191:27: note: expanded from macro 'GC9A01A_CS_LOW'
+  191 | #define GC9A01A_CS_LOW() (LCD_CSX_GPIO_Port->BSRR = ((uint32_t)LCD_CSX_Pin << 16U))
+      |                           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:180:27: note: expanded from macro 'LCD_CSX_GPIO_Port'
+  180 | #define LCD_CSX_GPIO_Port GPIOA
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:877:30: note: expanded from macro 'GPIOA'
+  877 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:92:5: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+   92 |     GC9A01A_DC_CMD();
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:188:27: note: expanded from macro 'GC9A01A_DC_CMD'
+  188 | #define GC9A01A_DC_CMD() (LCD_DCX_GPIO_Port->BSRR = ((uint32_t)LCD_DCX_Pin << 16U))
+      |                           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:182:27: note: expanded from macro 'LCD_DCX_GPIO_Port'
+  182 | #define LCD_DCX_GPIO_Port GPIOB
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:878:30: note: expanded from macro 'GPIOB'
+  878 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:97:5: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+   97 |     GC9A01A_DC_DATA();
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:189:28: note: expanded from macro 'GC9A01A_DC_DATA'
+  189 | #define GC9A01A_DC_DATA() (LCD_DCX_GPIO_Port->BSRR = (uint32_t)LCD_DCX_Pin)
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:182:27: note: expanded from macro 'LCD_DCX_GPIO_Port'
+  182 | #define LCD_DCX_GPIO_Port GPIOB
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:878:30: note: expanded from macro 'GPIOB'
+  878 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:112:5: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+  112 |     GC9A01A_RST_LOW();
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:194:28: note: expanded from macro 'GC9A01A_RST_LOW'
+  194 | #define GC9A01A_RST_LOW() (LCD_RST_GPIO_Port->BSRR = ((uint32_t)LCD_RST_Pin << 16U))
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:178:27: note: expanded from macro 'LCD_RST_GPIO_Port'
+  178 | #define LCD_RST_GPIO_Port GPIOB
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:878:30: note: expanded from macro 'GPIOB'
+  878 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:113:15: warning: 50 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  113 |     HAL_Delay(50);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:114:5: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+  114 |     GC9A01A_RST_HIGH();
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:195:29: note: expanded from macro 'GC9A01A_RST_HIGH'
+  195 | #define GC9A01A_RST_HIGH() (LCD_RST_GPIO_Port->BSRR = (uint32_t)LCD_RST_Pin)
+      |                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:178:27: note: expanded from macro 'LCD_RST_GPIO_Port'
+  178 | #define LCD_RST_GPIO_Port GPIOB
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:878:30: note: expanded from macro 'GPIOB'
+  878 | #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:115:15: warning: 120 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  115 |     HAL_Delay(120);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:206:34: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  206 |     data[0] = (uint8_t)(color >> 8);
+      |                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:207:33: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  207 |     data[1] = (uint8_t)(color & 0xFF);
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:216:13: warning: variable name 'hi' is too short, expected at least 3 characters [readability-identifier-length]
+  216 |     uint8_t hi;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:217:13: warning: variable name 'lo' is too short, expected at least 3 characters [readability-identifier-length]
+  217 |     uint8_t lo;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:224:29: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  224 |     hi = (uint8_t)(color >> 8);
+      |                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:225:28: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  225 |     lo = (uint8_t)(color & 0xFF);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:238:42: warning: parameter name 'x0' is too short, expected at least 3 characters [readability-identifier-length]
+  238 | void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:238:55: warning: parameter name 'x1' is too short, expected at least 3 characters [readability-identifier-length]
+  238 | void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:238:68: warning: parameter name 'y0' is too short, expected at least 3 characters [readability-identifier-length]
+  238 | void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:238:81: warning: parameter name 'y1' is too short, expected at least 3 characters [readability-identifier-length]
+  238 | void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:245:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  245 |     data[0] = (uint8_t)(x0 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:246:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  246 |     data[1] = (uint8_t)(x0 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:247:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  247 |     data[2] = (uint8_t)(x1 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:248:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  248 |     data[3] = (uint8_t)(x1 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:252:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  252 |     data[0] = (uint8_t)(y0 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:253:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  253 |     data[1] = (uint8_t)(y0 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:254:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  254 |     data[2] = (uint8_t)(y1 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:255:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  255 |     data[3] = (uint8_t)(y1 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:263:56: warning: parameter name 'x0' is too short, expected at least 3 characters [readability-identifier-length]
+  263 | static void gc9a01a_set_address_window_stream(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                        ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:263:69: warning: parameter name 'x1' is too short, expected at least 3 characters [readability-identifier-length]
+  263 | static void gc9a01a_set_address_window_stream(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:263:82: warning: parameter name 'y0' is too short, expected at least 3 characters [readability-identifier-length]
+  263 | static void gc9a01a_set_address_window_stream(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:263:95: warning: parameter name 'y1' is too short, expected at least 3 characters [readability-identifier-length]
+  263 | static void gc9a01a_set_address_window_stream(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1)
+      |                                                                                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:268:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  268 |     data[0] = (uint8_t)(x0 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:269:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  269 |     data[1] = (uint8_t)(x0 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:270:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  270 |     data[2] = (uint8_t)(x1 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:271:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  271 |     data[3] = (uint8_t)(x1 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:275:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  275 |     data[0] = (uint8_t)(y0 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:276:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  276 |     data[1] = (uint8_t)(y0 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:277:31: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  277 |     data[2] = (uint8_t)(y1 >> 8);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:278:30: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  278 |     data[3] = (uint8_t)(y1 & 0xFF);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:290:20: warning: 15 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  290 |     uint8_t params[15];
+      |                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:297:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  297 |     params[0] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:298:17: warning: 0x09 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  298 |     params[1] = 0x09;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:299:17: warning: 0x14 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  299 |     params[2] = 0x14;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:300:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  300 |     params[3] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:301:28: warning: 0xB5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  301 |     gc9a01a_write_cmd_only(0xB5);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:309:17: warning: 0x48 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  309 |     params[0] = 0x48;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:313:17: warning: 0x05 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  313 |     params[0] = 0x05;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:318:28: warning: 0xBA is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  318 |     gc9a01a_write_cmd_only(0xBA);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:321:17: warning: 0x1A is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  321 |     params[0] = 0x1A;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:325:17: warning: 0x1A is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  325 |     params[0] = 0x1A;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:329:17: warning: 0x25 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  329 |     params[0] = 0x25;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:333:17: warning: 0x45 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  333 |     params[0] = 0x45;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:334:17: warning: 0x09 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  334 |     params[1] = 0x09;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:335:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  335 |     params[2] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:336:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  336 |     params[3] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:337:17: warning: 0x26 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  337 |     params[4] = 0x26;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:338:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  338 |     params[5] = 0x2A;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:338:17: warning: 0x2A is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  338 |     params[5] = 0x2A;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:340:37: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  340 |     gc9a01a_write_data_only(params, 6);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:342:17: warning: 0x43 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  342 |     params[0] = 0x43;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:343:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  343 |     params[1] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:344:17: warning: 0x72 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  344 |     params[2] = 0x72;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:345:17: warning: 0x36 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  345 |     params[3] = 0x36;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:346:17: warning: 0x37 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  346 |     params[4] = 0x37;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:347:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  347 |     params[5] = 0x6F;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:347:17: warning: 0x6F is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  347 |     params[5] = 0x6F;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:349:37: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  349 |     gc9a01a_write_data_only(params, 6);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:351:17: warning: 0x45 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  351 |     params[0] = 0x45;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:352:17: warning: 0x09 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  352 |     params[1] = 0x09;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:353:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  353 |     params[2] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:354:17: warning: 0x08 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  354 |     params[3] = 0x08;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:355:17: warning: 0x26 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  355 |     params[4] = 0x26;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:356:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  356 |     params[5] = 0x2A;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:356:17: warning: 0x2A is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  356 |     params[5] = 0x2A;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:358:37: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  358 |     gc9a01a_write_data_only(params, 6);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:360:17: warning: 0x43 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  360 |     params[0] = 0x43;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:361:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  361 |     params[1] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:362:17: warning: 0x72 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  362 |     params[2] = 0x72;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:363:17: warning: 0x36 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  363 |     params[3] = 0x36;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:364:17: warning: 0x37 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  364 |     params[4] = 0x37;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:365:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  365 |     params[5] = 0x6F;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:365:17: warning: 0x6F is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  365 |     params[5] = 0x6F;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:367:37: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  367 |     gc9a01a_write_data_only(params, 6);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:369:17: warning: 0x34 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  369 |     params[0] = 0x34;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:373:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  373 |     params[0] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:374:17: warning: 0x0B is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  374 |     params[1] = 0x0B;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:375:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  375 |     params[2] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:376:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  376 |     params[3] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:377:17: warning: 0x39 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  377 |     params[4] = 0x39;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:378:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  378 |     params[5] = 0xF0;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:378:17: warning: 0xF0 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  378 |     params[5] = 0xF0;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:379:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  379 |     params[6] = 0x6D;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:379:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  379 |     params[6] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:380:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  380 |     params[7] = 0x6D;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:380:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  380 |     params[7] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:381:28: warning: 0x60 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  381 |     gc9a01a_write_cmd_only(0x60);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:382:37: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  382 |     gc9a01a_write_data_only(params, 8);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:384:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  384 |     params[0] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:385:17: warning: 0xF4 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  385 |     params[1] = 0xF4;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:386:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  386 |     params[2] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:387:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  387 |     params[3] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:388:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  388 |     params[4] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:389:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  389 |     params[5] = 0xF7;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:389:17: warning: 0xF7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  389 |     params[5] = 0xF7;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:390:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  390 |     params[6] = 0xF7;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:390:17: warning: 0xF7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  390 |     params[6] = 0xF7;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:391:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  391 |     params[7] = 0x6D;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:391:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  391 |     params[7] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:392:12: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  392 |     params[8] = 0x6D;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:392:17: warning: 0x6D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  392 |     params[8] = 0x6D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:393:28: warning: 0x61 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  393 |     gc9a01a_write_cmd_only(0x61);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:394:37: warning: 9 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  394 |     gc9a01a_write_data_only(params, 9);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:396:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  396 |     params[0] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:397:17: warning: 0x0D is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  397 |     params[1] = 0x0D;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:398:17: warning: 0x71 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  398 |     params[2] = 0x71;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:399:17: warning: 0xED is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  399 |     params[3] = 0xED;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:400:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  400 |     params[4] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:401:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  401 |     params[5] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:401:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  401 |     params[5] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:402:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  402 |     params[6] = 0x38;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:402:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  402 |     params[6] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:403:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  403 |     params[7] = 0x0F;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:403:17: warning: 0x0F is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  403 |     params[7] = 0x0F;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:404:12: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  404 |     params[8] = 0x71;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:404:17: warning: 0x71 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  404 |     params[8] = 0x71;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:405:12: warning: 9 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  405 |     params[9] = 0xEF;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:405:17: warning: 0xEF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  405 |     params[9] = 0xEF;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:406:12: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  406 |     params[10] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:406:18: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  406 |     params[10] = 0x70;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:407:12: warning: 11 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  407 |     params[11] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:407:18: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  407 |     params[11] = 0x70;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:408:28: warning: 0x62 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  408 |     gc9a01a_write_cmd_only(0x62);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:409:37: warning: 12 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  409 |     gc9a01a_write_data_only(params, 12);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:411:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  411 |     params[0] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:412:17: warning: 0x11 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  412 |     params[1] = 0x11;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:413:17: warning: 0x71 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  413 |     params[2] = 0x71;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:414:17: warning: 0xF1 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  414 |     params[3] = 0xF1;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:415:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  415 |     params[4] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:416:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  416 |     params[5] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:416:17: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  416 |     params[5] = 0x70;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:417:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  417 |     params[6] = 0x38;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:417:17: warning: 0x38 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  417 |     params[6] = 0x38;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:418:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  418 |     params[7] = 0x13;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:418:17: warning: 0x13 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  418 |     params[7] = 0x13;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:419:12: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  419 |     params[8] = 0x71;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:419:17: warning: 0x71 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  419 |     params[8] = 0x71;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:420:12: warning: 9 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  420 |     params[9] = 0xF3;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:420:17: warning: 0xF3 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  420 |     params[9] = 0xF3;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:421:12: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  421 |     params[10] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:421:18: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  421 |     params[10] = 0x70;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:422:12: warning: 11 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  422 |     params[11] = 0x70;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:422:18: warning: 0x70 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  422 |     params[11] = 0x70;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:423:28: warning: 0x63 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  423 |     gc9a01a_write_cmd_only(0x63);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:424:37: warning: 12 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  424 |     gc9a01a_write_data_only(params, 12);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:426:17: warning: 0x28 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  426 |     params[0] = 0x28;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:427:17: warning: 0x29 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  427 |     params[1] = 0x29;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:428:17: warning: 0xF1 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  428 |     params[2] = 0xF1;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:430:17: warning: 0xF1 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  430 |     params[4] = 0xF1;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:431:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  431 |     params[5] = 0x00;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:432:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  432 |     params[6] = 0x07;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:432:17: warning: 0x07 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  432 |     params[6] = 0x07;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:433:28: warning: 0x64 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  433 |     gc9a01a_write_cmd_only(0x64);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:434:37: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  434 |     gc9a01a_write_data_only(params, 7);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:436:17: warning: 0x3C is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  436 |     params[0] = 0x3C;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:438:17: warning: 0xCD is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  438 |     params[2] = 0xCD;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:439:17: warning: 0x67 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  439 |     params[3] = 0x67;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:440:17: warning: 0x45 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  440 |     params[4] = 0x45;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:441:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  441 |     params[5] = 0x45;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:441:17: warning: 0x45 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  441 |     params[5] = 0x45;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:442:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  442 |     params[6] = 0x10;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:442:17: warning: 0x10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  442 |     params[6] = 0x10;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:443:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  443 |     params[7] = 0x00;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:444:12: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  444 |     params[8] = 0x00;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:445:12: warning: 9 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  445 |     params[9] = 0x00;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:446:28: warning: 0x66 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  446 |     gc9a01a_write_cmd_only(0x66);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:447:37: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  447 |     gc9a01a_write_data_only(params, 10);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:450:17: warning: 0x3C is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  450 |     params[1] = 0x3C;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:454:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  454 |     params[5] = 0x01;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:455:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  455 |     params[6] = 0x54;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:455:17: warning: 0x54 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  455 |     params[6] = 0x54;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:456:12: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  456 |     params[7] = 0x10;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:456:17: warning: 0x10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  456 |     params[7] = 0x10;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:457:12: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  457 |     params[8] = 0x32;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:457:17: warning: 0x32 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  457 |     params[8] = 0x32;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:458:12: warning: 9 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  458 |     params[9] = 0x98;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:458:17: warning: 0x98 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  458 |     params[9] = 0x98;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:459:28: warning: 0x67 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  459 |     gc9a01a_write_cmd_only(0x67);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:460:37: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  460 |     gc9a01a_write_data_only(params, 10);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:462:17: warning: 0x10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  462 |     params[0] = 0x10;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:463:17: warning: 0x80 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  463 |     params[1] = 0x80;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:464:17: warning: 0x80 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  464 |     params[2] = 0x80;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:467:12: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  467 |     params[5] = 0x4E;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:467:17: warning: 0x4E is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  467 |     params[5] = 0x4E;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:468:12: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  468 |     params[6] = 0x00;
+      |            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:469:28: warning: 0x74 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  469 |     gc9a01a_write_cmd_only(0x74);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:470:37: warning: 7 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  470 |     gc9a01a_write_data_only(params, 7);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:472:17: warning: 0x3E is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  472 |     params[0] = 0x3E;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:473:17: warning: 0x07 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  473 |     params[1] = 0x07;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:474:28: warning: 0x98 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  474 |     gc9a01a_write_cmd_only(0x98);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:477:17: warning: 0x3E is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  477 |     params[0] = 0x3E;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:478:17: warning: 0x07 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  478 |     params[1] = 0x07;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:479:28: warning: 0x99 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  479 |     gc9a01a_write_cmd_only(0x99);
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:489:15: warning: 120 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  489 |     HAL_Delay(120);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:494:15: warning: 120 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  494 |     HAL_Delay(120);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:499:15: warning: 20 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  499 |     HAL_Delay(20);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:511:5: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+  511 |     GC9A01A_CS_LOW();
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:191:27: note: expanded from macro 'GC9A01A_CS_LOW'
+  191 | #define GC9A01A_CS_LOW() (LCD_CSX_GPIO_Port->BSRR = ((uint32_t)LCD_CSX_Pin << 16U))
+      |                           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.h:180:27: note: expanded from macro 'LCD_CSX_GPIO_Port'
+  180 | #define LCD_CSX_GPIO_Port GPIOA
+      |                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f303xc.h:877:30: note: expanded from macro 'GPIOA'
+  877 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:520:34: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  520 | void gc9a01a_draw_pixel(uint16_t x, uint16_t y, uint16_t color)
+      |                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:520:46: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  520 | void gc9a01a_draw_pixel(uint16_t x, uint16_t y, uint16_t color)
+      |                                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:529:34: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  529 |     data[0] = (uint8_t)(color >> 8);
+      |                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:530:33: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  530 |     data[1] = (uint8_t)(color & 0xFF);
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:538:41: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  538 | static void gc9a01a_write_char(uint16_t x, uint16_t y, char ch, FontDef font, uint16_t color,
+      |                                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:538:53: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  538 | static void gc9a01a_write_char(uint16_t x, uint16_t y, char ch, FontDef font, uint16_t color,
+      |                                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:538:61: warning: parameter name 'ch' is too short, expected at least 3 characters [readability-identifier-length]
+  538 | static void gc9a01a_write_char(uint16_t x, uint16_t y, char ch, FontDef font, uint16_t color,
+      |                                                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:541:14: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
+  541 |     uint32_t i;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:542:14: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
+  542 |     uint32_t j;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:543:14: warning: variable name 'b' is too short, expected at least 3 characters [readability-identifier-length]
+  543 |     uint32_t b;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:544:13: warning: variable name 'fg' is too short, expected at least 3 characters [readability-identifier-length]
+  544 |     uint8_t fg[2];
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:545:13: warning: variable name 'bg' is too short, expected at least 3 characters [readability-identifier-length]
+  545 |     uint8_t bg[2];
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:547:32: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  547 |     fg[0] = (uint8_t)(color >> 8);
+      |                                ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:548:31: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  548 |     fg[1] = (uint8_t)(color & 0xFF);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:549:34: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  549 |     bg[0] = (uint8_t)(bgcolor >> 8);
+      |                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:550:33: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  550 |     bg[1] = (uint8_t)(bgcolor & 0xFF);
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:556:23: warning: '*' has higher precedence than '+'; add parentheses to explicitly specify the order of operations [readability-math-missing-parentheses]
+  556 |         b = font.data[(ch - 32) * font.height + i];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                       (                      )
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:556:29: warning: 32 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  556 |         b = font.data[(ch - 32) * font.height + i];
+      |                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:559:28: warning: 0x8000U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  559 |             if ((b << j) & 0x8000U)
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:571:36: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  571 | void gc9a01a_write_string(uint16_t x, uint16_t y, const char *str, FontDef font, uint16_t color,
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:571:48: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  571 | void gc9a01a_write_string(uint16_t x, uint16_t y, const char *str, FontDef font, uint16_t color,
+      |                                                ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:608:33: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  608 | void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color)
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:608:45: warning: parameter name 'w' is too short, expected at least 3 characters [readability-identifier-length]
+  608 | void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color)
+      |                                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:608:57: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  608 | void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color)
+      |                                                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:608:69: warning: parameter name 'h' is too short, expected at least 3 characters [readability-identifier-length]
+  608 | void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color)
+      |                                                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:658:17: warning: 0xEF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  658 |     params[3] = 0xEF;
+      |                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:679:34: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  679 | void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data)
+      |                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:679:46: warning: parameter name 'w' is too short, expected at least 3 characters [readability-identifier-length]
+  679 | void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data)
+      |                                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:679:58: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  679 | void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data)
+      |                                                          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:679:70: warning: parameter name 'h' is too short, expected at least 3 characters [readability-identifier-length]
+  679 | void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data)
+      |                                                                      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:716:57: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  716 |             line_bytes[(2U * col)] = (uint8_t)(pixel >> 8);
+      |                                                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:717:60: warning: 0xFF is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  717 |             line_bytes[(2U * col) + 1] = (uint8_t)(pixel & 0xFF);
+      |                                                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:742:6: warning: function 'gc9a01a_fill_circle' has cognitive complexity of 38 (threshold 25) [readability-function-cognitive-complexity]
+  742 | void gc9a01a_fill_circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color)
+      |      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:752:5: note: +1, including nesting penalty of 0, nesting level increased to 1
+  752 |     while (x >= y)
+      |     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:754:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+  754 |         if ((y0 + (uint16_t)y) < BSP_LCD_ACTIVE_HEIGHT)
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:756:51: note: +3, including nesting penalty of 2, nesting level increased to 3
+  756 |             uint16_t start_x = (x0 > (uint16_t)x) ? (x0 - (uint16_t)x) : 0U;
+      |                                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:759:13: note: +3, including nesting penalty of 2, nesting level increased to 3
+  759 |             if ((start_x + width) > BSP_LCD_ACTIVE_WIDTH)
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:767:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+  767 |         if ((y0 >= (uint16_t)y) && ((y0 - (uint16_t)y) < BSP_LCD_ACTIVE_HEIGHT))
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:767:33: note: +1
+  767 |         if ((y0 >= (uint16_t)y) && ((y0 - (uint16_t)y) < BSP_LCD_ACTIVE_HEIGHT))
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:769:51: note: +3, including nesting penalty of 2, nesting level increased to 3
+  769 |             uint16_t start_x = (x0 > (uint16_t)x) ? (x0 - (uint16_t)x) : 0U;
+      |                                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:772:13: note: +3, including nesting penalty of 2, nesting level increased to 3
+  772 |             if ((start_x + width) > BSP_LCD_ACTIVE_WIDTH)
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:780:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+  780 |         if ((y0 + (uint16_t)x) < BSP_LCD_ACTIVE_HEIGHT)
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:782:51: note: +3, including nesting penalty of 2, nesting level increased to 3
+  782 |             uint16_t start_x = (x0 > (uint16_t)y) ? (x0 - (uint16_t)y) : 0U;
+      |                                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:785:13: note: +3, including nesting penalty of 2, nesting level increased to 3
+  785 |             if ((start_x + width) > BSP_LCD_ACTIVE_WIDTH)
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:793:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+  793 |         if ((y0 >= (uint16_t)x) && ((y0 - (uint16_t)x) < BSP_LCD_ACTIVE_HEIGHT))
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:793:33: note: +1
+  793 |         if ((y0 >= (uint16_t)x) && ((y0 - (uint16_t)x) < BSP_LCD_ACTIVE_HEIGHT))
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:795:51: note: +3, including nesting penalty of 2, nesting level increased to 3
+  795 |             uint16_t start_x = (x0 > (uint16_t)y) ? (x0 - (uint16_t)y) : 0U;
+      |                                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:798:13: note: +3, including nesting penalty of 2, nesting level increased to 3
+  798 |             if ((start_x + width) > BSP_LCD_ACTIVE_WIDTH)
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:808:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+  808 |         if (err < 0)
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:812:9: note: +1, nesting level increased to 2
+  812 |         else
+      |         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:742:35: warning: parameter name 'x0' is too short, expected at least 3 characters [readability-identifier-length]
+  742 | void gc9a01a_fill_circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color)
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:742:48: warning: parameter name 'y0' is too short, expected at least 3 characters [readability-identifier-length]
+  742 | void gc9a01a_fill_circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color)
+      |                                                ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:744:13: warning: variable name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  744 |     int16_t x;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:745:13: warning: variable name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  745 |     int16_t y;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:750:11: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  750 |     err = 1 - x;
+      |           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:810:20: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  810 |             err += (2 * y) + 1;
+      |                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:815:20: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  815 |             err += 2 * (y - x) + 1;
+      |                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\display\gc9a01a.c:815:20: warning: '*' has higher precedence than '+'; add parentheses to explicitly specify the order of operations [readability-math-missing-parentheses]
+  815 |             err += 2 * (y - x) + 1;
+      |                    ^~~~~~~~~~~
+      |                    (          )
+3105 warnings generated.
+
+
+=== Core/drivers/game/app.c ===
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F3xx/Include\stm32f3xx.h:266:11: warning: circular header file dependency detected while including 'stm32f3xx_hal.h', please check the include path [misc-header-include-cycle]
+  266 |  #include "stm32f3xx_hal.h"
+      |           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/STM32F3xx_HAL_Driver/Inc\stm32f3xx_hal_def.h:29:10: note: 'stm32f3xx.h' included from here
+   29 | #include "stm32f3xx.h"
+      |          ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/STM32F3xx_HAL_Driver/Inc\stm32f3xx_hal_rcc.h:27:10: note: 'stm32f3xx_hal_def.h' included from here
+   27 | #include "stm32f3xx_hal_def.h"
+      |          ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Core/Inc\stm32f3xx_hal_conf.h:200:11: note: 'stm32f3xx_hal_rcc.h' included from here
+  200 |  #include "stm32f3xx_hal_rcc.h"
+      |           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Drivers/STM32F3xx_HAL_Driver/Inc\stm32f3xx_hal.h:29:10: note: 'stm32f3xx_hal_conf.h' included from here
+   29 | #include "stm32f3xx_hal_conf.h"
+      |          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\app.c:10:10: note: 'stm32f3xx_hal.h' included from here
+   10 | #include "stm32f3xx_hal.h"
+      |          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\app.c:30:48: warning: 1000.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   30 |         dt_s = (float)(now_tick - last_tick) / 1000.0f;
+      |                                                ^
+2385 warnings generated.
+
+
+=== Core/drivers/game/ball_img.c ===
+108 warnings generated.
+
+
+=== Core/drivers/game/game.c ===
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:295:46: warning: parameter name 'x0' is too short, expected at least 3 characters [readability-identifier-length]
+  295 |     void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1);
+      |                                              ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:295:59: warning: parameter name 'x1' is too short, expected at least 3 characters [readability-identifier-length]
+  295 |     void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1);
+      |                                                           ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:295:72: warning: parameter name 'y0' is too short, expected at least 3 characters [readability-identifier-length]
+  295 |     void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1);
+      |                                                                        ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:295:85: warning: parameter name 'y1' is too short, expected at least 3 characters [readability-identifier-length]
+  295 |     void gc9a01a_set_address_window(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1);
+      |                                                                                     ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:297:38: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  297 |     void gc9a01a_draw_pixel(uint16_t x, uint16_t y, uint16_t color);
+      |                                      ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:297:50: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  297 |     void gc9a01a_draw_pixel(uint16_t x, uint16_t y, uint16_t color);
+      |                                                  ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:298:37: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  298 |     void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color);
+      |                                     ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:298:49: warning: parameter name 'w' is too short, expected at least 3 characters [readability-identifier-length]
+  298 |     void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color);
+      |                                                 ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:298:61: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  298 |     void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color);
+      |                                                             ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:298:73: warning: parameter name 'h' is too short, expected at least 3 characters [readability-identifier-length]
+  298 |     void gc9a01a_fill_rect(uint16_t x, uint16_t w, uint16_t y, uint16_t h, uint16_t color);
+      |                                                                         ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:300:39: warning: parameter name 'x0' is too short, expected at least 3 characters [readability-identifier-length]
+  300 |     void gc9a01a_fill_circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color);
+      |                                       ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:300:52: warning: parameter name 'y0' is too short, expected at least 3 characters [readability-identifier-length]
+  300 |     void gc9a01a_fill_circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color);
+      |                                                    ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:302:40: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  302 |     void gc9a01a_write_string(uint16_t x, uint16_t y, const char *str, FontDef font, uint16_t color,
+      |                                        ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:302:52: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  302 |     void gc9a01a_write_string(uint16_t x, uint16_t y, const char *str, FontDef font, uint16_t color,
+      |                                                    ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:305:38: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  305 |     void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data);
+      |                                      ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:305:50: warning: parameter name 'w' is too short, expected at least 3 characters [readability-identifier-length]
+  305 |     void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data);
+      |                                                  ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:305:62: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  305 |     void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data);
+      |                                                              ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display\gc9a01a.h:305:74: warning: parameter name 'h' is too short, expected at least 3 characters [readability-identifier-length]
+  305 |     void gc9a01a_draw_image(uint16_t x, uint16_t w, uint16_t y, uint16_t h, const uint16_t *data);
+      |                                                                          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:31:31: warning: 0x13572468UL is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   31 | static uint32_t s_rng_state = 0x13572468UL;
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:49:20: warning: 1103515245UL is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   49 |     s_rng_state = (1103515245UL * s_rng_state) + 12345UL;
+      |                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:49:50: warning: 12345UL is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   49 |     s_rng_state = (1103515245UL * s_rng_state) + 12345UL;
+      |                                                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:93:13: warning: variable name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+   93 |     int32_t x;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:112:13: warning: variable name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  112 |     int32_t y;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:160:25: warning: 15U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  160 |     gc9a01a_fill_circle(15U, 20U, 70U, GC9A01A_COLOR565(255, 214, 230));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:160:30: warning: 20U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  160 |     gc9a01a_fill_circle(15U, 20U, 70U, GC9A01A_COLOR565(255, 214, 230));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:160:35: warning: 70U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  160 |     gc9a01a_fill_circle(15U, 20U, 70U, GC9A01A_COLOR565(255, 214, 230));
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:161:25: warning: 95U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  161 |     gc9a01a_fill_circle(95U, 18U, 42U, GC9A01A_COLOR565(215, 232, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:161:30: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  161 |     gc9a01a_fill_circle(95U, 18U, 42U, GC9A01A_COLOR565(215, 232, 255));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:161:35: warning: 42U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  161 |     gc9a01a_fill_circle(95U, 18U, 42U, GC9A01A_COLOR565(215, 232, 255));
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:162:25: warning: 185U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  162 |     gc9a01a_fill_circle(185U, 22U, 58U, GC9A01A_COLOR565(222, 213, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:162:31: warning: 22U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  162 |     gc9a01a_fill_circle(185U, 22U, 58U, GC9A01A_COLOR565(222, 213, 255));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:162:36: warning: 58U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  162 |     gc9a01a_fill_circle(185U, 22U, 58U, GC9A01A_COLOR565(222, 213, 255));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:163:25: warning: 232U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  163 |     gc9a01a_fill_circle(232U, 40U, 55U, GC9A01A_COLOR565(255, 228, 196));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:163:31: warning: 40U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  163 |     gc9a01a_fill_circle(232U, 40U, 55U, GC9A01A_COLOR565(255, 228, 196));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:163:36: warning: 55U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  163 |     gc9a01a_fill_circle(232U, 40U, 55U, GC9A01A_COLOR565(255, 228, 196));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:165:25: warning: 28U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  165 |     gc9a01a_fill_circle(28U, 110U, 48U, GC9A01A_COLOR565(255, 236, 170));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:165:30: warning: 110U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  165 |     gc9a01a_fill_circle(28U, 110U, 48U, GC9A01A_COLOR565(255, 236, 170));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:165:36: warning: 48U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  165 |     gc9a01a_fill_circle(28U, 110U, 48U, GC9A01A_COLOR565(255, 236, 170));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:166:25: warning: 108U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  166 |     gc9a01a_fill_circle(108U, 90U, 65U, GC9A01A_COLOR565(205, 246, 224));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:166:31: warning: 90U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  166 |     gc9a01a_fill_circle(108U, 90U, 65U, GC9A01A_COLOR565(205, 246, 224));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:166:36: warning: 65U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  166 |     gc9a01a_fill_circle(108U, 90U, 65U, GC9A01A_COLOR565(205, 246, 224));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:167:25: warning: 190U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  167 |     gc9a01a_fill_circle(190U, 115U, 52U, GC9A01A_COLOR565(255, 214, 214));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:167:31: warning: 115U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  167 |     gc9a01a_fill_circle(190U, 115U, 52U, GC9A01A_COLOR565(255, 214, 214));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:167:37: warning: 52U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  167 |     gc9a01a_fill_circle(190U, 115U, 52U, GC9A01A_COLOR565(255, 214, 214));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:168:25: warning: 232U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  168 |     gc9a01a_fill_circle(232U, 120U, 40U, GC9A01A_COLOR565(210, 240, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:168:31: warning: 120U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  168 |     gc9a01a_fill_circle(232U, 120U, 40U, GC9A01A_COLOR565(210, 240, 255));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:168:37: warning: 40U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  168 |     gc9a01a_fill_circle(232U, 120U, 40U, GC9A01A_COLOR565(210, 240, 255));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:170:25: warning: 22U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  170 |     gc9a01a_fill_circle(22U, 208U, 55U, GC9A01A_COLOR565(220, 220, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:170:30: warning: 208U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  170 |     gc9a01a_fill_circle(22U, 208U, 55U, GC9A01A_COLOR565(220, 220, 255));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:170:36: warning: 55U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  170 |     gc9a01a_fill_circle(22U, 208U, 55U, GC9A01A_COLOR565(220, 220, 255));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:171:25: warning: 95U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  171 |     gc9a01a_fill_circle(95U, 208U, 46U, GC9A01A_COLOR565(255, 224, 245));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:171:30: warning: 208U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  171 |     gc9a01a_fill_circle(95U, 208U, 46U, GC9A01A_COLOR565(255, 224, 245));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:171:36: warning: 46U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  171 |     gc9a01a_fill_circle(95U, 208U, 46U, GC9A01A_COLOR565(255, 224, 245));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:172:25: warning: 170U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  172 |     gc9a01a_fill_circle(170U, 210U, 60U, GC9A01A_COLOR565(220, 255, 210));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:172:31: warning: 210U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  172 |     gc9a01a_fill_circle(170U, 210U, 60U, GC9A01A_COLOR565(220, 255, 210));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:172:37: warning: 60U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  172 |     gc9a01a_fill_circle(170U, 210U, 60U, GC9A01A_COLOR565(220, 255, 210));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:173:25: warning: 232U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  173 |     gc9a01a_fill_circle(232U, 220U, 48U, GC9A01A_COLOR565(255, 230, 205));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:173:31: warning: 220U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  173 |     gc9a01a_fill_circle(232U, 220U, 48U, GC9A01A_COLOR565(255, 230, 205));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:173:37: warning: 48U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  173 |     gc9a01a_fill_circle(232U, 220U, 48U, GC9A01A_COLOR565(255, 230, 205));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:175:25: warning: 52U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  175 |     gc9a01a_fill_circle(52U, 42U, 20U, GC9A01A_COLOR565(255, 120, 170));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:175:30: warning: 42U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  175 |     gc9a01a_fill_circle(52U, 42U, 20U, GC9A01A_COLOR565(255, 120, 170));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:175:35: warning: 20U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  175 |     gc9a01a_fill_circle(52U, 42U, 20U, GC9A01A_COLOR565(255, 120, 170));
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:176:25: warning: 135U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  176 |     gc9a01a_fill_circle(135U, 40U, 18U, GC9A01A_COLOR565(120, 190, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:176:31: warning: 40U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  176 |     gc9a01a_fill_circle(135U, 40U, 18U, GC9A01A_COLOR565(120, 190, 255));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:176:36: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  176 |     gc9a01a_fill_circle(135U, 40U, 18U, GC9A01A_COLOR565(120, 190, 255));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:177:25: warning: 205U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  177 |     gc9a01a_fill_circle(205U, 58U, 16U, GC9A01A_COLOR565(180, 120, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:177:31: warning: 58U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  177 |     gc9a01a_fill_circle(205U, 58U, 16U, GC9A01A_COLOR565(180, 120, 255));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:177:36: warning: 16U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  177 |     gc9a01a_fill_circle(205U, 58U, 16U, GC9A01A_COLOR565(180, 120, 255));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:179:25: warning: 60U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  179 |     gc9a01a_fill_circle(60U, 102U, 14U, GC9A01A_COLOR565(255, 160, 80));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:179:30: warning: 102U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  179 |     gc9a01a_fill_circle(60U, 102U, 14U, GC9A01A_COLOR565(255, 160, 80));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:179:36: warning: 14U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  179 |     gc9a01a_fill_circle(60U, 102U, 14U, GC9A01A_COLOR565(255, 160, 80));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:180:25: warning: 132U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  180 |     gc9a01a_fill_circle(132U, 112U, 22U, GC9A01A_COLOR565(120, 255, 180));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:180:31: warning: 112U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  180 |     gc9a01a_fill_circle(132U, 112U, 22U, GC9A01A_COLOR565(120, 255, 180));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:180:37: warning: 22U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  180 |     gc9a01a_fill_circle(132U, 112U, 22U, GC9A01A_COLOR565(120, 255, 180));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:181:25: warning: 208U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  181 |     gc9a01a_fill_circle(208U, 98U, 18U, GC9A01A_COLOR565(255, 110, 110));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:181:31: warning: 98U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  181 |     gc9a01a_fill_circle(208U, 98U, 18U, GC9A01A_COLOR565(255, 110, 110));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:181:36: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  181 |     gc9a01a_fill_circle(208U, 98U, 18U, GC9A01A_COLOR565(255, 110, 110));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:183:25: warning: 38U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  183 |     gc9a01a_fill_circle(38U, 180U, 16U, GC9A01A_COLOR565(95, 170, 255));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:183:30: warning: 180U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  183 |     gc9a01a_fill_circle(38U, 180U, 16U, GC9A01A_COLOR565(95, 170, 255));
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:183:36: warning: 16U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  183 |     gc9a01a_fill_circle(38U, 180U, 16U, GC9A01A_COLOR565(95, 170, 255));
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:184:25: warning: 118U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  184 |     gc9a01a_fill_circle(118U, 180U, 18U, GC9A01A_COLOR565(255, 110, 210));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:184:31: warning: 180U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  184 |     gc9a01a_fill_circle(118U, 180U, 18U, GC9A01A_COLOR565(255, 110, 210));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:184:37: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  184 |     gc9a01a_fill_circle(118U, 180U, 18U, GC9A01A_COLOR565(255, 110, 210));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:185:25: warning: 198U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  185 |     gc9a01a_fill_circle(198U, 182U, 22U, GC9A01A_COLOR565(120, 235, 120));
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:185:31: warning: 182U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  185 |     gc9a01a_fill_circle(198U, 182U, 22U, GC9A01A_COLOR565(120, 235, 120));
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:185:37: warning: 22U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  185 |     gc9a01a_fill_circle(198U, 182U, 22U, GC9A01A_COLOR565(120, 235, 120));
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:187:25: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  187 |     gc9a01a_fill_circle(18U, 12U, 5U, MAGENTA);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:187:30: warning: 12U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  187 |     gc9a01a_fill_circle(18U, 12U, 5U, MAGENTA);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:187:35: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  187 |     gc9a01a_fill_circle(18U, 12U, 5U, MAGENTA);
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:188:25: warning: 32U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  188 |     gc9a01a_fill_circle(32U, 18U, 7U, RED);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:188:30: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  188 |     gc9a01a_fill_circle(32U, 18U, 7U, RED);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:188:35: warning: 7U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  188 |     gc9a01a_fill_circle(32U, 18U, 7U, RED);
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:189:25: warning: 48U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  189 |     gc9a01a_fill_circle(48U, 10U, 4U, ORANGE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:189:30: warning: 10U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  189 |     gc9a01a_fill_circle(48U, 10U, 4U, ORANGE);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:190:25: warning: 66U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  190 |     gc9a01a_fill_circle(66U, 22U, 6U, VIOLET);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:190:30: warning: 22U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  190 |     gc9a01a_fill_circle(66U, 22U, 6U, VIOLET);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:190:35: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  190 |     gc9a01a_fill_circle(66U, 22U, 6U, VIOLET);
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:191:25: warning: 82U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  191 |     gc9a01a_fill_circle(82U, 14U, 5U, INDIGO);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:191:30: warning: 14U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  191 |     gc9a01a_fill_circle(82U, 14U, 5U, INDIGO);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:191:35: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  191 |     gc9a01a_fill_circle(82U, 14U, 5U, INDIGO);
+      |                                   ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:192:25: warning: 110U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  192 |     gc9a01a_fill_circle(110U, 16U, 7U, CYAN);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:192:31: warning: 16U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  192 |     gc9a01a_fill_circle(110U, 16U, 7U, CYAN);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:192:36: warning: 7U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  192 |     gc9a01a_fill_circle(110U, 16U, 7U, CYAN);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:193:25: warning: 126U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  193 |     gc9a01a_fill_circle(126U, 10U, 4U, BLUE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:193:31: warning: 10U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  193 |     gc9a01a_fill_circle(126U, 10U, 4U, BLUE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:194:25: warning: 145U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  194 |     gc9a01a_fill_circle(145U, 20U, 5U, PINK);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:194:31: warning: 20U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  194 |     gc9a01a_fill_circle(145U, 20U, 5U, PINK);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:194:36: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  194 |     gc9a01a_fill_circle(145U, 20U, 5U, PINK);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:195:25: warning: 164U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  195 |     gc9a01a_fill_circle(164U, 12U, 6U, GREENYELLOW);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:195:31: warning: 12U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  195 |     gc9a01a_fill_circle(164U, 12U, 6U, GREENYELLOW);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:195:36: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  195 |     gc9a01a_fill_circle(164U, 12U, 6U, GREENYELLOW);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:196:25: warning: 182U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  196 |     gc9a01a_fill_circle(182U, 18U, 4U, PURPLE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:196:31: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  196 |     gc9a01a_fill_circle(182U, 18U, 4U, PURPLE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:197:25: warning: 205U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  197 |     gc9a01a_fill_circle(205U, 16U, 6U, RED);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:197:31: warning: 16U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  197 |     gc9a01a_fill_circle(205U, 16U, 6U, RED);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:197:36: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  197 |     gc9a01a_fill_circle(205U, 16U, 6U, RED);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:198:25: warning: 225U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  198 |     gc9a01a_fill_circle(225U, 18U, 5U, ORANGE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:198:31: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  198 |     gc9a01a_fill_circle(225U, 18U, 5U, ORANGE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:198:36: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  198 |     gc9a01a_fill_circle(225U, 18U, 5U, ORANGE);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:200:25: warning: 12U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  200 |     gc9a01a_fill_circle(12U, 122U, 5U, RED);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:200:30: warning: 122U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  200 |     gc9a01a_fill_circle(12U, 122U, 5U, RED);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:200:36: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  200 |     gc9a01a_fill_circle(12U, 122U, 5U, RED);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:201:25: warning: 24U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  201 |     gc9a01a_fill_circle(24U, 138U, 7U, MAGENTA);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:201:30: warning: 138U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  201 |     gc9a01a_fill_circle(24U, 138U, 7U, MAGENTA);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:201:36: warning: 7U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  201 |     gc9a01a_fill_circle(24U, 138U, 7U, MAGENTA);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:202:25: warning: 40U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  202 |     gc9a01a_fill_circle(40U, 128U, 4U, ORANGE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:202:30: warning: 128U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  202 |     gc9a01a_fill_circle(40U, 128U, 4U, ORANGE);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:203:25: warning: 55U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  203 |     gc9a01a_fill_circle(55U, 145U, 6U, BLUE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:203:30: warning: 145U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  203 |     gc9a01a_fill_circle(55U, 145U, 6U, BLUE);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:203:36: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  203 |     gc9a01a_fill_circle(55U, 145U, 6U, BLUE);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:204:25: warning: 74U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  204 |     gc9a01a_fill_circle(74U, 132U, 5U, VIOLET);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:204:30: warning: 132U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  204 |     gc9a01a_fill_circle(74U, 132U, 5U, VIOLET);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:204:36: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  204 |     gc9a01a_fill_circle(74U, 132U, 5U, VIOLET);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:205:25: warning: 92U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  205 |     gc9a01a_fill_circle(92U, 148U, 7U, INDIGO);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:205:30: warning: 148U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  205 |     gc9a01a_fill_circle(92U, 148U, 7U, INDIGO);
+      |                              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:205:36: warning: 7U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  205 |     gc9a01a_fill_circle(92U, 148U, 7U, INDIGO);
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:206:25: warning: 110U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  206 |     gc9a01a_fill_circle(110U, 132U, 4U, CYAN);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:206:31: warning: 132U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  206 |     gc9a01a_fill_circle(110U, 132U, 4U, CYAN);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:207:25: warning: 126U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  207 |     gc9a01a_fill_circle(126U, 146U, 6U, GREEN);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:207:31: warning: 146U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  207 |     gc9a01a_fill_circle(126U, 146U, 6U, GREEN);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:207:37: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  207 |     gc9a01a_fill_circle(126U, 146U, 6U, GREEN);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:208:25: warning: 146U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  208 |     gc9a01a_fill_circle(146U, 130U, 5U, PINK);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:208:31: warning: 130U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  208 |     gc9a01a_fill_circle(146U, 130U, 5U, PINK);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:208:37: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  208 |     gc9a01a_fill_circle(146U, 130U, 5U, PINK);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:209:25: warning: 164U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  209 |     gc9a01a_fill_circle(164U, 146U, 7U, PURPLE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:209:31: warning: 146U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  209 |     gc9a01a_fill_circle(164U, 146U, 7U, PURPLE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:209:37: warning: 7U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  209 |     gc9a01a_fill_circle(164U, 146U, 7U, PURPLE);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:210:25: warning: 182U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  210 |     gc9a01a_fill_circle(182U, 132U, 4U, ORANGE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:210:31: warning: 132U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  210 |     gc9a01a_fill_circle(182U, 132U, 4U, ORANGE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:211:25: warning: 198U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  211 |     gc9a01a_fill_circle(198U, 146U, 6U, RED);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:211:31: warning: 146U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  211 |     gc9a01a_fill_circle(198U, 146U, 6U, RED);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:211:37: warning: 6U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  211 |     gc9a01a_fill_circle(198U, 146U, 6U, RED);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:212:25: warning: 216U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  212 |     gc9a01a_fill_circle(216U, 130U, 5U, MAGENTA);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:212:31: warning: 130U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  212 |     gc9a01a_fill_circle(216U, 130U, 5U, MAGENTA);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:212:37: warning: 5U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  212 |     gc9a01a_fill_circle(216U, 130U, 5U, MAGENTA);
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:213:25: warning: 230U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  213 |     gc9a01a_fill_circle(230U, 144U, 4U, BLUE);
+      |                         ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:213:31: warning: 144U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  213 |     gc9a01a_fill_circle(230U, 144U, 4U, BLUE);
+      |                               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:219:13: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
+  219 |     uint8_t i;
+      |             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:220:14: warning: variable name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+  220 |     uint16_t x;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:221:14: warning: variable name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+  221 |     uint16_t y;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:222:14: warning: variable name 'r' is too short, expected at least 3 characters [readability-identifier-length]
+  222 |     uint16_t r;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:224:14: warning: variable name 'rx' is too short, expected at least 3 characters [readability-identifier-length]
+  224 |     uint16_t rx;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:225:14: warning: variable name 'ry' is too short, expected at least 3 characters [readability-identifier-length]
+  225 |     uint16_t ry;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:226:14: warning: variable name 'rw' is too short, expected at least 3 characters [readability-identifier-length]
+  226 |     uint16_t rw;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:227:14: warning: variable name 'rh' is too short, expected at least 3 characters [readability-identifier-length]
+  227 |     uint16_t rh;
+      |              ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:229:28: warning: 100U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  229 |     if ((game_rand_u32() % 100U) > 40U)
+      |                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:229:36: warning: 40U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  229 |     if ((game_rand_u32() % 100U) > 40U)
+      |                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:238:33: warning: 8U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  238 |         r = game_rand_range(2U, 8U);
+      |                                 ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:240:29: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  240 |         x = game_rand_range(18U, LCD_SIZE);
+      |                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\game.c:241:29: warning: 18U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  241 |         y = game_rand_range(18U, LCD_SIZE);
+      |                             ^
+2577 warnings generated.
+
+
+=== Core/drivers/game/player.c ===
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:29:43: warning: parameter name 'x' is too short, expected at least 3 characters [readability-identifier-length]
+   29 | err_t player_init(player_t *player, float x, float y, uint16_t radius, uint16_t colour)
+      |                                           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:29:52: warning: parameter name 'y' is too short, expected at least 3 characters [readability-identifier-length]
+   29 | err_t player_init(player_t *player, float x, float y, uint16_t radius, uint16_t colour)
+      |                                                    ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:68:60: warning: parameter name 'cx' is too short, expected at least 3 characters [readability-identifier-length]
+   68 | err_t player_bounce_in_round_world(player_t *player, float cx, float cy, float world_radius)
+      |                                                            ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:68:70: warning: parameter name 'cy' is too short, expected at least 3 characters [readability-identifier-length]
+   68 | err_t player_bounce_in_round_world(player_t *player, float cx, float cy, float world_radius)
+      |                                                                      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:70:11: warning: variable name 'dx' is too short, expected at least 3 characters [readability-identifier-length]
+   70 |     float dx;
+      |           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:71:11: warning: variable name 'dy' is too short, expected at least 3 characters [readability-identifier-length]
+   71 |     float dy;
+      |           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:74:11: warning: variable name 'nx' is too short, expected at least 3 characters [readability-identifier-length]
+   74 |     float nx;
+      |           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:75:11: warning: variable name 'ny' is too short, expected at least 3 characters [readability-identifier-length]
+   75 |     float ny;
+      |           ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:100:40: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  100 |             player->vx = player->vx - (2.0f * dot * nx);
+      |                                        ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\player.c:101:40: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  101 |             player->vy = player->vy - (2.0f * dot * ny);
+      |                                        ^
+548 warnings generated.
+
+
+=== Core/drivers/game/world.c ===
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\world.c:19:38: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   19 |     world->center_x = (float)width / 2.0f;
+      |                                      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\world.c:20:39: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   20 |     world->center_y = (float)height / 2.0f;
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\world.c:21:37: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   21 |     world->radius = ((float)width / 2.0f) - 2.0f;
+      |                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\game\world.c:21:45: warning: 2.0f is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   21 |     world->radius = ((float)width / 2.0f) - 2.0f;
+      |                                             ^
+112 warnings generated.
+
+
+=== Core/drivers/imu/mpu6050.c ===
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:49:26: warning: redundant 'hi2c1' declaration [readability-redundant-declaration]
+   49 | extern I2C_HandleTypeDef hi2c1;
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/cmake/stm32cubemx/../../Core/Inc\main.h:114:26: note: previously declared here
+  114 | extern I2C_HandleTypeDef hi2c1;
+      |                          ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:97:15: warning: 200 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+   97 |     HAL_Delay(200);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:105:15: warning: 10 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  105 |     HAL_Delay(10);
+      |               ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:107:61: warning: 0x07U is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  107 |     status = mpu6050_write_reg(hdl, MPU6050_REG_SMPLRT_DIV, 0x07U);
+      |                                                             ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:183:22: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  183 |     uint8_t raw_data[6];
+      |                      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:200:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  200 |     raw_x = (int16_t)((raw_data[0] << 8) | raw_data[1]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:201:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  201 |     raw_y = (int16_t)((raw_data[2] << 8) | raw_data[3]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:202:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  202 |     raw_z = (int16_t)((raw_data[4] << 8) | raw_data[5]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:202:53: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  202 |     raw_z = (int16_t)((raw_data[4] << 8) | raw_data[5]);
+      |                                                     ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:206:18: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  206 |         raw_x -= hdl->accel_x_offset;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:207:18: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  207 |         raw_y -= hdl->accel_y_offset;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:208:18: warning: narrowing conversion from 'int' to signed type 'int16_t' (aka 'short') is implementation-defined [bugprone-narrowing-conversions]
+  208 |         raw_z -= hdl->accel_z_offset;
+      |                  ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:220:22: warning: 6 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  220 |     uint8_t raw_data[6];
+      |                      ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:237:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  237 |     raw_x = (int16_t)((raw_data[0] << 8) | raw_data[1]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:238:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  238 |     raw_y = (int16_t)((raw_data[2] << 8) | raw_data[3]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:239:39: warning: 8 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  239 |     raw_z = (int16_t)((raw_data[4] << 8) | raw_data[5]);
+      |                                       ^
+C:\Users\bhara\OneDrive\Desktop\CI-CD\embedded-ci-cd\Projects\020_Bouncy_Ball\Core\drivers\imu\mpu6050.c:239:53: warning: 5 is a magic number; consider replacing it with a named constant [readability-magic-numbers]
+  239 |     raw_z = (int16_t)((raw_data[4] << 8) | raw_data[5]);
+      |                                                     ^
+2966 warnings generated.

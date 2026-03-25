@@ -1,0 +1,72 @@
+[1/31] Building ASM object CMakeFiles/020_Bouncy_Ball.dir/startup_stm32f303xc.s.obj
+[2/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/Src/sysmem.c.obj
+[3/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/game/ball_img.c.obj
+[4/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/gfx/gfx.c.obj
+[5/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/game/player.c.obj
+[6/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/Src/syscalls.c.obj
+[7/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/game/world.c.obj
+[8/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/Src/stm32f3xx_hal_msp.c.obj
+[9/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/Src/stm32f3xx_it.c.obj
+[10/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/game/app.c.obj
+[11/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/Src/main.c.obj
+[12/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/game/game.c.obj
+In file included from C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/game/game.c:11:
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.h:34:6: warning: "BSP_LCD_ORIENTATION" is not defined, evaluates to 0 [-Wundef]
+   34 | #if (BSP_LCD_ORIENTATION == PORTRAIT)
+      |      ^~~~~~~~~~~~~~~~~~~
+[13/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/imu/mpu6050.c.obj
+[14/31] Building C object CMakeFiles/020_Bouncy_Ball.dir/Core/drivers/display/gc9a01a.c.obj
+In file included from C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:9:
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.h:34:6: warning: "BSP_LCD_ORIENTATION" is not defined, evaluates to 0 [-Wundef]
+   34 | #if (BSP_LCD_ORIENTATION == PORTRAIT)
+      |      ^~~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c: In function 'gc9a01a_fill_circle':
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:756:53: warning: operand of '?:' changes signedness from 'int' to 'unsigned int' due to unsignedness of other operand [-Wsign-compare]
+  756 |             uint16_t start_x = (x0 > (uint16_t)x) ? (x0 - (uint16_t)x) : 0U;
+      |                                                     ^~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:767:56: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  767 |         if ((y0 >= (uint16_t)y) && ((y0 - (uint16_t)y) < BSP_LCD_ACTIVE_HEIGHT))
+      |                                                        ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:769:53: warning: operand of '?:' changes signedness from 'int' to 'unsigned int' due to unsignedness of other operand [-Wsign-compare]
+  769 |             uint16_t start_x = (x0 > (uint16_t)x) ? (x0 - (uint16_t)x) : 0U;
+      |                                                     ^~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:782:53: warning: operand of '?:' changes signedness from 'int' to 'unsigned int' due to unsignedness of other operand [-Wsign-compare]
+  782 |             uint16_t start_x = (x0 > (uint16_t)y) ? (x0 - (uint16_t)y) : 0U;
+      |                                                     ^~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:793:56: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  793 |         if ((y0 >= (uint16_t)x) && ((y0 - (uint16_t)x) < BSP_LCD_ACTIVE_HEIGHT))
+      |                                                        ^
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:795:53: warning: operand of '?:' changes signedness from 'int' to 'unsigned int' due to unsignedness of other operand [-Wsign-compare]
+  795 |             uint16_t start_x = (x0 > (uint16_t)y) ? (x0 - (uint16_t)y) : 0U;
+      |                                                     ^~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c: At top level:
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:202:13: warning: 'gc9a01a_write_u16_color' defined but not used [-Wunused-function]
+  202 | static void gc9a01a_write_u16_color(uint16_t color)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:195:13: warning: 'gc9a01a_write_data' defined but not used [-Wunused-function]
+  195 | static void gc9a01a_write_data(const uint8_t *buff, size_t buff_size)
+      |             ^~~~~~~~~~~~~~~~~~
+C:/Users/bhara/OneDrive/Desktop/CI-CD/embedded-ci-cd/Projects/020_Bouncy_Ball/Core/drivers/display/gc9a01a.c:188:13: warning: 'gc9a01a_write_cmd' defined but not used [-Wunused-function]
+  188 | static void gc9a01a_write_cmd(uint8_t cmd)
+      |             ^~~~~~~~~~~~~~~~~
+[15/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f3xx.c.obj
+[16/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c.obj
+[17/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c.obj
+[18/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c.obj
+[19/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c.obj
+[20/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c.obj
+[21/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c.obj
+[22/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c.obj
+[23/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c.obj
+[24/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c.obj
+[25/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c.obj
+[26/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c.obj
+[27/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c.obj
+[28/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c.obj
+[29/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c.obj
+[30/31] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.c.obj
+[31/31] Linking C executable 020_Bouncy_Ball.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2712 B        40 KB      6.62%
+          CCMRAM:           0 B         8 KB      0.00%
+           FLASH:       28560 B       256 KB     10.89%

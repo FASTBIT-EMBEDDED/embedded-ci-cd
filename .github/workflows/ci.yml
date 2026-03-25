@@ -1,45 +1,54 @@
-name: CI
+name: Embedded CI
 
 on:
   push:
     branches: ["**"]
+    paths:
+      - "Projects/**"
+      - "container/**"
+      - ".github/workflows/**"
   pull_request:
     branches: ["**"]
+    paths:
+      - "Projects/**"
+      - "container/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project folder name under Projects/"
+        required: true
+        default: "020_Bouncy_Ball"
+      build:
+        description: "Build type"
+        required: true
+        default: "debug"
+      test:
+        description: "Test mode"
+        required: true
+        default: "none"
 
 jobs:
-  quality:
+  build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install tools
+      - name: Build container image
         run: |
-          sudo apt-get update
-          sudo apt-get install -y clang-format clang-tidy cppcheck ninja-build
+          docker compose -f container/docker-compose.yml build
 
-      - name: Configure
+      - name: Run project build
         run: |
-          cmake -S . -B build/Debug -G Ninja
+          PROJECT="${{ inputs.project || '020_Bouncy_Ball' }}"
+          BUILD="${{ inputs.build || 'debug' }}"
+          TEST="${{ inputs.test || 'none' }}"
 
-      - name: Build
-        run: |
-          python tools/quality/run_build.py
-
-      - name: Format check
-        run: |
-          python tools/quality/format_check.py
-
-      - name: Run cppcheck
-        run: |
-          python tools/quality/run_cppcheck.py
-
-      - name: Run clang-tidy
-        run: |
-          python tools/quality/run_clang_tidy.py
+          docker compose -f container/docker-compose.yml run --rm embedded-dev \
+            bash -lc "cd /workspace/Projects/${PROJECT} && make target=target test=${TEST} build=${BUILD}"
