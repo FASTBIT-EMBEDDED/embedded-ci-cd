@@ -10,14 +10,17 @@ on:
   workflow_dispatch:
     inputs:
       project:
-        {
-          description: "Project folder",
-          required: true,
-          default: "020_Bouncy_Ball",
-        }
+        description: "Project folder"
+        required: true
+        default: "020_Bouncy_Ball"
       build:
-        { description: "debug or release", required: true, default: "debug" }
-      test: { description: "all or none", required: true, default: "none" }
+        description: "debug or release"
+        required: true
+        default: "debug"
+      test:
+        description: "all or none"
+        required: true
+        default: "none"
 
 jobs:
   docker-image:
@@ -27,6 +30,7 @@ jobs:
       packages: write
     outputs:
       image: ${{ steps.img.outputs.name }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -45,7 +49,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile # ← one Dockerfile at root, not in container/
+          file: container/Dockerfile
           push: true
           tags: ${{ steps.img.outputs.name }}:latest
           cache-from: type=registry,ref=${{ steps.img.outputs.name }}:buildcache
@@ -57,13 +61,24 @@ jobs:
     permissions:
       contents: read
       packages: read
+
     env:
       IMAGE: ${{ needs.docker-image.outputs.image }}:latest
-      PROJECT: ${{ github.event.inputs.project || '020_Bouncy_Ball' }}
-      BUILD: ${{ github.event.inputs.build   || 'debug' }}
-      TEST: ${{ github.event.inputs.test    || 'none' }}
+
     steps:
       - uses: actions/checkout@v4
+
+      - name: Resolve inputs/defaults
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "PROJECT=${{ github.event.inputs.project }}" >> "$GITHUB_ENV"
+            echo "BUILD=${{ github.event.inputs.build }}" >> "$GITHUB_ENV"
+            echo "TEST=${{ github.event.inputs.test }}" >> "$GITHUB_ENV"
+          else
+            echo "PROJECT=020_Bouncy_Ball" >> "$GITHUB_ENV"
+            echo "BUILD=debug" >> "$GITHUB_ENV"
+            echo "TEST=none" >> "$GITHUB_ENV"
+          fi
 
       - uses: docker/login-action@v3
         with:
@@ -76,8 +91,10 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ~/.ccache
-          key: ccache-${{ env.PROJECT }}-${{ env.BUILD }}-${{ hashFiles('Projects/**/*.c','Projects/**/*.h') }}
-          restore-keys: ccache-${{ env.PROJECT }}-${{ env.BUILD }}-
+          key: ccache-${{ env.PROJECT }}-${{ env.BUILD }}-${{ hashFiles('Projects/**/*.c', 'Projects/**/*.h', 'Projects/**/*.cpp') }}
+          restore-keys: |
+            ccache-${{ env.PROJECT }}-${{ env.BUILD }}-
+            ccache-${{ env.PROJECT }}-
 
       - name: Build + analyze + test
         run: |
