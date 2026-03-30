@@ -2,61 +2,50 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build",
+            "type": "shell",
+            "command": "make build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Build (Release)",
+            "type": "shell",
+            "command": "make build BUILD=release",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Analyze",
+            "type": "shell",
+            "command": "make analyze",
+            "problemMatcher": []
+        },
+        {
+            "label": "All (Build + Analyze)",
+            "type": "shell",
+            "command": "make all",
+            "problemMatcher": []
+        },
+        {
             "label": "Format Apply",
             "type": "shell",
-            "command": "python",
-            "args": [
-                "tools/quality/format_apply.py"
-            ],
+            "command": "make format",
             "problemMatcher": []
         },
         {
             "label": "Format Check",
             "type": "shell",
-            "command": "python",
-            "args": [
-                "tools/quality/format_check.py"
-            ],
+            "command": "make format-check",
             "problemMatcher": []
         },
         {
-            "label": "Build",
+            "label": "Clean",
             "type": "shell",
-            "command": "python",
-            "args": [
-                "tools/quality/run_build.py"
-            ],
+            "command": "make clean",
             "problemMatcher": []
-        },
-        {
-            "label": "Cppcheck",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "tools/quality/run_cppcheck.py"
-            ],
-            "problemMatcher": []
-        },
-        {
-            "label": "Clang-tidy",
-            "type": "shell",
-            "command": "python",
-            "args": [
-                "tools/quality/run_clang_tidy.py"
-            ],
-            "problemMatcher": []
-        },
-        {
-            "label": "Quality Gate",
-            "command": "python",
-            "args": [
-                "tools/quality/run_quality_gate.py"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
         }
     ]
 }

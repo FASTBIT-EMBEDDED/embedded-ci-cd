@@ -1,27 +1,34 @@
-import subprocess, sys, json
-from pathlib import Path
+import subprocess
+import sys
 
-ROOT = Path(__file__).resolve().parents[1]
+from common import ROOT, load_config, print_header, print_status, write_report
 
-def main():
-    cfg  = json.loads((ROOT / "project.cfg").read_text())
-    dirs = [str(ROOT / d) for d in cfg.get("include_dirs", [])]
-    exc  = [f"--suppress=*:{ROOT}/{e}/*" for e in cfg.get("exclude_dirs", [])]
+
+def main() -> int:
+    cfg  = load_config()
+    dirs = [str(ROOT / d) for d in cfg["include_dirs"]]
     supp = ROOT / "cppcheck" / "suppressions.txt"
+
+    print_header("CPPCHECK")
 
     cmd = [
         "cppcheck", "--enable=all", "--error-exitcode=1",
         f"--suppressions-list={supp}",
         "--inline-suppr",
-        *exc,
         *dirs,
     ]
     r = subprocess.run(cmd, capture_output=True, text=True)
-    print(r.stdout + r.stderr)
+    output = r.stdout + r.stderr
+    write_report("cppcheck.log", output)
+
     if r.returncode != 0:
-        print("[FAIL] cppcheck")
-        sys.exit(1)
-    print("[PASS] cppcheck")
+        print(output)
+        print_status("cppcheck", "FAIL", "Errors found")
+        return 1
+
+    print_status("cppcheck", "PASS", "No errors found")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

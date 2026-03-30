@@ -1,83 +1,50 @@
 cmake_minimum_required(VERSION 3.22)
 
-#
-# This file is generated only once,
-# and is not re-generated if converter is called multiple times.
-#
-# User is free to modify the file as much as necessary
-#
+# ── Platform selection ─────────────────────────────────────────────────────────
+# PLATFORM is passed by the Makefile via -DPLATFORM=<name>.
+# The matching toolchain file (cmake/platform/<PLATFORM>.cmake) is also passed
+# via -DCMAKE_TOOLCHAIN_FILE by the Makefile — so the compiler is already
+# configured before this file runs.
+# To add a new MCU: add cmake/platform/<name>.cmake + cmake/bsp/<name>/.
+if(NOT DEFINED PLATFORM)
+    set(PLATFORM "stm32f3")
+    message(WARNING "PLATFORM not set, defaulting to '${PLATFORM}'. "
+                    "Pass -DPLATFORM=<name> or use the Makefile.")
+endif()
 
-# Setup compiler settings
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Define the build type
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Debug")
+    set(CMAKE_BUILD_TYPE Debug)
 endif()
 
-# Set the project name
-set(CMAKE_PROJECT_NAME 020_Bouncy_Ball)
+project(020_Bouncy_Ball C ASM)
+message(STATUS "Platform : ${PLATFORM}")
+message(STATUS "Build    : ${CMAKE_BUILD_TYPE}")
 
-# Enable compile command to ease indexing with e.g. clangd
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
-
-# Core project settings
-project(${CMAKE_PROJECT_NAME})
-message("Build type: " ${CMAKE_BUILD_TYPE})
-
-# Enable CMake support for ASM and C languages
-enable_language(C ASM)
-
-# Create an executable object type
-add_executable(${CMAKE_PROJECT_NAME})
-
-# Add STM32CubeMX generated sources
-add_subdirectory(cmake/stm32cubemx)
-
-# Link directories setup
-target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    # Add user defined library search paths
+# ── Application executable (must exist before the BSP subdirectory adds sources) ─
+add_executable(${PROJECT_NAME}
+    Core/drivers/game/app.c
+    Core/drivers/game/game.c
+    Core/drivers/game/ball_img.c
+    Core/drivers/game/player.c
+    Core/drivers/game/world.c
+    Core/drivers/gfx/gfx.c
+    Core/drivers/imu/mpu6050.c
+    Core/drivers/display/gc9a01a.c
 )
 
-# Add sources to executable
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game/app.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game/game.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game/ball_img.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game/player.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game/world.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/gfx/gfx.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/imu/mpu6050.c
-    ${CMAKE_SOURCE_DIR}/Core/drivers/display/gc9a01a.c
+target_include_directories(${PROJECT_NAME} PRIVATE
+    Core/drivers/game
+    Core/drivers/gfx
+    Core/drivers/imu
+    Core/drivers/display
 )
 
-# Add include paths
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/Core/drivers/game
-    ${CMAKE_SOURCE_DIR}/Core/drivers/gfx
-    ${CMAKE_SOURCE_DIR}/Core/drivers/imu
-    ${CMAKE_SOURCE_DIR}/Core/drivers/display
-)
-
-# Add project symbols (macros)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
-    # Add user defined symbols
-)
-
-# Remove wrong libob.a library dependency when using cpp files
-list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
-
-# Add linked libraries
-target_link_libraries(${CMAKE_PROJECT_NAME}
-    stm32cubemx
-
-    # Add user defined libraries
-)
-
-#Addons by me for CI CD
-target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
+target_compile_options(${PROJECT_NAME} PRIVATE
     -Wall
     -Wextra
     -Wshadow
@@ -86,3 +53,8 @@ target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE
     -Wformat=2
     -Wno-unused-parameter
 )
+
+# ── Board Support Package ──────────────────────────────────────────────────────
+# Runs after add_executable so the BSP can call target_sources / target_link_libraries
+# on the already-defined target. Adds HAL sources, startup, includes, defines.
+add_subdirectory(cmake/bsp/${PLATFORM})

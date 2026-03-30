@@ -101,7 +101,6 @@ int main(void)
   if (app_init() != ERR_OK) {
     Error_Handler();
   }
-  
 
   app_run();
   /* USER CODE END 2 */

@@ -5,34 +5,26 @@
             "name": "default",
             "hidden": true,
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/${presetName}",
-		    "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
+            "binaryDir": "${sourceDir}/build/stm32f3/${presetName}",
+            "toolchainFile": "${sourceDir}/cmake/platform/stm32f3.cmake",
             "cacheVariables": {
+                "PLATFORM": "stm32f3",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             }
         },
         {
             "name": "Debug",
             "inherits": "default",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
         },
         {
             "name": "Release",
             "inherits": "default",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            }
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
         }
     ],
     "buildPresets": [
-        {
-            "name": "Debug",
-            "configurePreset": "Debug"
-        },
-        {
-            "name": "Release",
-            "configurePreset": "Release"
-        }
+        { "name": "Debug",   "configurePreset": "Debug" },
+        { "name": "Release", "configurePreset": "Release" }
     ]
 }

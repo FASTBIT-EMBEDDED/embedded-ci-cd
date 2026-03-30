@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-analyze:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache apt packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-${{ runner.os }}-toolchain-v1
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build python3 \
+            gcc-arm-none-eabi binutils-arm-none-eabi \
+            clang-format clang-tidy cppcheck
+
+      # ── Quality steps (each shown separately for clear pass/fail in GitHub UI) ─
+
+      - name: Format check
+        run: make format-check PLATFORM=stm32f3 BUILD=debug
+
+      - name: Build
+        run: make build PLATFORM=stm32f3 BUILD=debug
+
+      - name: Analyze
+        run: make analyze PLATFORM=stm32f3 BUILD=debug
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: reports/
+          if-no-files-found: ignore
